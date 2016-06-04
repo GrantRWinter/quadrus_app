@@ -1,0 +1,6 @@
+<%= simple_form_for [:admins, @car], html: { class: "input-group"} do |f| %>
+  <%= f.input :make %>
+  <%= f.input :model %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>
