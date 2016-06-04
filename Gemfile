@@ -48,6 +48,7 @@ group :development, :test do
   gem "rspec-rails", "3.5.0.beta1"
   gem 'seed_dump'
   gem 'selenium-webdriver'
+  gem 'dotenv-rails'
 end
 
 

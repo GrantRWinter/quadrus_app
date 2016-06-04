@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'cars#index'
 
   resources :cars, only: [:index, :show]
 
