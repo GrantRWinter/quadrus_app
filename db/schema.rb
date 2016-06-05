@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160603201759) do
+ActiveRecord::Schema.define(version: 20160605174944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,19 @@ ActiveRecord::Schema.define(version: 20160603201759) do
     t.string   "image"
     t.string   "description"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "available",   default: true
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer  "car_id"
+    t.string   "customer_first_name"
+    t.string   "customer_last_name"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["car_id"], name: "index_orders_on_car_id", using: :btree
+  end
+
+  add_foreign_key "orders", "cars"
 end

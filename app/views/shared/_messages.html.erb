@@ -1,0 +1,34 @@
+<% flash.each do |name, msg| %>
+  <% if name == 'alert' %>
+    <div class="alert alert-warning">
+      <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+      <i class="fa fa-times-circle sign"></i>
+      <%= msg %>
+    </div>
+  <% end %>
+  <% if name == 'danger' %>
+    <div class="alert alert-danger">
+      <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+      <i class="fa fa-times-circle sign"></i>
+      <%= msg %>
+    </div>
+    <% elsif name == 'error' %>
+      <div class="alert alert-danger">
+          <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+          <i class="fa fa-times-circle sign"></i>
+          <%= msg %>
+      </div>
+  <% elsif name == 'success' %>
+    <div class="alert alert-success">
+      <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+      <i class="fa fa-check sign"></i>
+      <%= msg %>
+    </div>
+  <% elsif name == 'notice' %>
+    <div class="alert alert-success">
+      <button aria-hidden="true" class="close" data-dismiss="alert" type="button">×</button>
+      <i class="fa fa-check sign"></i>
+      <%= msg %>
+    </div>
+  <% end %>
+<% end %>

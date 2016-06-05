@@ -1,0 +1,6 @@
+<%= form_for([@car, @order]) do |f| %>
+
+  First Name : <%= f.text_field :customer_first_name %><br>
+  Last Name: <%= f.text_field :customer_last_name %><br>
+  <%= f.button :submit %>
+<% end %>

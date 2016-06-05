@@ -9,6 +9,9 @@ class Admins::CarsController < ApplicationController
     @car = Car.new(car_params)
     if @car.save
       redirect_to cars_path
+    else
+      flash[:alert] = @car.errors.full_messages.to_sentence
+      render :new
     end
   end
 

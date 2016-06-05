@@ -10,6 +10,7 @@
 #  price       :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  available   :boolean          default(TRUE)
 #
 
 require 'rails_helper'

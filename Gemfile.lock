@@ -52,9 +52,9 @@ GEM
       jmespath (~> 1.0)
     aws-sdk-resources (2.3.11)
       aws-sdk-core (= 2.3.11)
-    bootstrap (4.0.0.alpha3)
-      autoprefixer-rails (>= 6.0.3)
-      sass (>= 3.4.19)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.7.1)
@@ -242,7 +242,7 @@ DEPENDENCIES
   annotate
   awesome_print
   aws-sdk (~> 2)
-  bootstrap (~> 4.0.0.alpha3)
+  bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.1.0)
   dotenv-rails
