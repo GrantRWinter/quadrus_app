@@ -26,7 +26,7 @@
                     <div class="col-sm-4 col-lg-4 col-md-4">
 
                     <!-- clean this up at end  -->
-                        <div class="thumbnail" style="background-image: url(<%#= car.image %>)">
+                        <div class="thumbnail">
                             <%= link_to car do %>
                               <%= image_tag car.image %>
                             <% end %>
@@ -48,7 +48,7 @@
                                 </p>
                             </div>
                             <div class="order">
-                              <%= link_to "Order Now!", new_car_order_path(car), class: "btn btn-success" %>
+                              <%= link_to "Order Now!", new_car_order_path(car), class: "btn-primary btn-success" %>
                             </div>
                         </div>
                     </div>
@@ -174,20 +174,6 @@
                 </div>
 
             </div>
-
-
-<!--
-            <div class="col-md-9">
-                <div class="row">
-
-                </div>
-
-            </div> -->
-
-
-
-
-
 
         </div>
 
