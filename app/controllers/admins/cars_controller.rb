@@ -22,7 +22,7 @@ class Admins::CarsController < ApplicationController
 
     def car_params
       params.require(:car)
-        .permit(:make, :model, :description)
+        .permit(:make, :model, :description, :image)
     end
 
     def set_s3_direct_post

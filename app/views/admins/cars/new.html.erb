@@ -52,10 +52,16 @@ $(function() {
 
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
+        console.log("This is the key: " + key);
         var url   = '//' + form.data('host') + '/' + key;
+        console.log("This is the url: " + url);
 
         // create hidden field
+        console.log("This is the fileinput: " + fileInput.attr('name')[0])
+
         var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
+
+        console.log(input);
         form.append(input);
       },
       fail: function(e, data) {

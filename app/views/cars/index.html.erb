@@ -2,6 +2,7 @@
   <div class="container-fluid">
     <% @cars.each do |car| %>
       <div class=""><%= car.make %></li>
+      <%= image_tag car.image if car.image %>
 
     <% end %>
   </div>
