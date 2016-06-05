@@ -28,7 +28,7 @@
                     <!-- clean this up at end  -->
                         <div class="thumbnail">
                             <%= link_to car do %>
-                              <%= image_tag car.image %>
+                              <%= image_tag( car.image.present? ? car.image : 'no_image') %>
                             <% end %>
 
                             <div class="caption">
