@@ -14,7 +14,7 @@
 #
 
 class Car < ApplicationRecord
-  has_many :orders
+  has_many :orders, dependent: :destroy
 
   # validates :make, presence: true
 

@@ -1,0 +1,32 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Available</th>
+        <th>Remove From List</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cars.each do |car| %>
+        <tr>
+          <td><%= car.make %></td>
+          <td><%= car.model %></td>
+          <td><%= car.description %></td>
+          <td><%= number_to_currency(car.price) %></td>
+          <td><span class="<%= car.available ? "glyphicon glyphicon-ok green" : "glyphicon glyphicon-remove red"%>"</span></td>
+          <%#= link_to "&times;", %>
+
+          <td><%= link_to('Remove',  admins_car_path(car),  method: :delete, data: { confirm: 'Are you sure? This will also delete all associated orders.' }) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="row">
+  <%= link_to 'Add Car to Inventory', new_admins_car_path, class: "btn btn-default" %>
+  </div>
+</div>

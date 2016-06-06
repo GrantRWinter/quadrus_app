@@ -15,17 +15,28 @@ class Admins::CarsController < ApplicationController
     end
   end
 
+  def index
+    @cars = Car.all
+  end
+
   def edit
   end
 
   def update
   end
 
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
+    redirect_to admins_cars_path
+
+  end
+
   private
 
     def car_params
       params.require(:car)
-        .permit(:make, :model, :description, :image)
+        .permit(:make, :model, :description, :price, :image, :available)
     end
 
     def set_s3_direct_post

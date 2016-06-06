@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Current Orders</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Customer First Name</th>
+        <th>Customer Last Name</th>
+        <th>Car Make</th>
+        <th>Car Model</th>
+        <th>Car Price</th>
+        <th>Cancel Order</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.id %></td>
+          <td><%= order.customer_first_name %></td>
+          <td><%= order.customer_last_name %></td>
+          <td><%= order.car.make %></td>
+          <td><%= order.car.model %></td>
+          <td><%= number_to_currency(order.car.price) %></td>
+          <td><%= link_to('Remove',  admins_order_path(order),  method: :delete, data: { confirm: 'Are you sure you want to cancel this customer\'s order?' }) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

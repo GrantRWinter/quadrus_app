@@ -1,1 +1,26 @@
-<%= image_tag @car.image%>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <%= image_tag @car.image%>
+    </div>
+    <div class="col-md-6">
+      <h1><strong><%= @car.make %></strong>&nbsp;<%= @car.model %></h1>
+      <div><%= @car.description %></div>
+      <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
+      <hr>
+      <h2><%= number_to_currency(@car.price) %></h2
+      <div><%= @car.available ? "In" : "Out of"%> Stock</div>
+      <hr>
+      <div class="btn-group">
+        <% if @car.available %>
+          <%= link_to "Order This Car Now", new_car_order_path(@car), class: "btn btn-success" %>
+        <% else %>
+          <button class="btn btn-success" disabled>Sorry Out of Stock</button>
+        <% end %>
+      </div>
+      <div class="btn-group">
+        <%= link_to "Back to Browse", cars_path, class: "btn btn-primary"%>
+      </div>
+    </div>
+  </div>
+</div>

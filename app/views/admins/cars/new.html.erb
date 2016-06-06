@@ -1,7 +1,7 @@
 <style>
 
 .progress {
-  max-width: 600px;
+  max-width: 900px;
   margin:    0.2em 0 0.2em 0;
 }
 
@@ -10,19 +10,73 @@
   padding-left: 0.2em;
   color:   white;
   display: none;
+  height: 100%;
+}
+
+.submit-button {
+  margin-left: 15px;
+}
+
+.car_available {
+  margin-left: 21px;
 }
 </style>
 
-<%= form_for([:admins, @car], html: { class: "input-group directUpload",
-data: { 'form-data' => (@s3_direct_post.fields),
-'url' => @s3_direct_post.url,
-'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
+<div class="container">
+  <h1>Enter New Car Details</h1>
 
-  Car Make : <%= f.text_field :make %><br>
-  Car Model: <%= f.text_field :model %><br>
-  Car Description<%= f.text_field :description %><br>
-  <%= f.label :image %><br>
-  <%= f.file_field :image %>
-  <%= f.button :submit %>
-<% end %>
+  <%= simple_form_for([:admins, @car], html: { class: "form-horizontal directUpload",
+    data: { 'form-data' => (@s3_direct_post.fields),
+    'url' => @s3_direct_post.url,
+    'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
+
+    <div class="form-group">
+      <%= f.label :make, "Car Make:", class: "col-sm-2 control-label" %>
+      <div class="col-sm-8">
+        <%= f.text_field :make, class: "form-control " %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :model, "Car Model:", class: "col-sm-2 control-label" %>
+      <div class="col-sm-8">
+        <%= f.text_field :model, class: "form-control " %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, "Description:", class: "col-sm-2 control-label" %>
+      <div class="col-sm-8">
+        <%= f.text_area :description, class: "form-control " %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :price, "Price:", class: "col-sm-2 control-label" %>
+      <div class="col-sm-8">
+        <%= f.text_field :price, class: "form-control " %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :image, "Image:", class: "col-sm-2 control-label" %>
+      <div class="col-sm-8">
+        <%= f.file_field :image %>
+      </div>
+    </div>
+
+    <div class="form-group">
+
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.input :available, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2">
+        <%= f.button :submit, class: "submit-button btn btn-default" %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
