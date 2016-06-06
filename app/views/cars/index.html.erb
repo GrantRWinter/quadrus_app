@@ -21,7 +21,7 @@
               <% end %>
 
               <div class="caption">
-                <h4><a href="#"><strong><%= car.make %></strong>&nbsp;<%= car.model %></a></h4>
+                <h4><a href="<%= car_path(car) %>"><strong><%= car.make.upcase %></strong>&nbsp;<%= car.model %></a></h4>
                 <h3><%= number_to_currency(car.price) %></h3>
                 <p><%= car.description %></p>
               </div>
