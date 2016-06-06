@@ -15,10 +15,9 @@
 
 class Car < ApplicationRecord
   has_many :orders, dependent: :destroy
-
-  # validates :make, presence: true
-
   validates :model, :uniqueness => {:scope => :make, :message => "is already listed with this Make"}
-
-
+  validates :make, presence: true
+  validates :model, presence: true
+  validates :description, presence: true
+  validates :price, presence: true, numericality: true
 end

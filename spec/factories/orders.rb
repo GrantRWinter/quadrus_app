@@ -12,6 +12,8 @@
 
 FactoryGirl.define do
   factory :order do
-    car nil
+    car                 { FactoryGirl.create(:car)}
+    customer_first_name "John"
+    customer_last_name  "Doe"
   end
 end

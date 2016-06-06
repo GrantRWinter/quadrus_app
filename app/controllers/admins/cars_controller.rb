@@ -1,5 +1,5 @@
 class Admins::CarsController < ApplicationController
-  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
+  before_action :set_s3_direct_post, only: [:new, :create]
 
   def new
     @car = Car.new
@@ -10,7 +10,7 @@ class Admins::CarsController < ApplicationController
     if @car.save
       redirect_to cars_path
     else
-      flash[:alert] = @car.errors.full_messages.to_sentence
+      flash.now[:alert] = @car.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -19,17 +19,10 @@ class Admins::CarsController < ApplicationController
     @cars = Car.all
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   def destroy
     @car = Car.find(params[:id])
     @car.destroy
     redirect_to admins_cars_path
-
   end
 
   private

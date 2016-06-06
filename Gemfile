@@ -44,13 +44,14 @@ group :development, :test do
   gem 'byebug', platform: :mri   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'annotate'
   gem 'awesome_print'
-  gem 'factory_girl_rails'
+  gem "factory_girl_rails", "~> 4.0"
   gem 'faker'
   gem 'poltergeist'                                       # PhantomJS driver for capybara - used for headless browser tests
-  gem "rspec-rails", "3.5.0.beta1"
+  gem "rspec-rails"
   gem 'seed_dump'
   gem 'selenium-webdriver'
-  gem 'dotenv-rails'
+  gem 'rails-controller-testing' # Now required for Rails 5
+  gem 'dotenv-rails' # Allows for use of dotenv Heroku file locally
 end
 
 

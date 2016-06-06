@@ -15,6 +15,11 @@
 
 FactoryGirl.define do
   factory :car do
-    
+    make  "Honda"
+    model "Accord"
+    image "//www.image.com"
+    description "This is one sweet car"
+    price 24567
+    available true
   end
 end
