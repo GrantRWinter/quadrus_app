@@ -10,7 +10,7 @@ This app is currently deployed on Heroku at [https://quadrusapp.herokuapp.com/](
 2. Postgres for DB
 3. Bootstrap for styling
 4. AWS S3 for image storage
-5.
+5. Heroku for App deployment
 
 ### Site Navigation Instructions
 
@@ -61,6 +61,11 @@ To recreate DB, from command line:
   ```rake db:create```
 
   ```rake db:migrate```
+
+### Environment Variables
+
+  This app uses a ".env" for environment variables.
+  This is not committed to the public repo as it has AWS credentials. Contact me for this information if needed.
 
 ### Testing Framework
 
