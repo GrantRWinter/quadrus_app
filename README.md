@@ -1,11 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+!Quadrus Web Full-Stack Developer Practicum
 
 Things you may want to cover:
 
-* Ruby version
+* This application is a Ruby on Rails 5 App that allows for Car inventory Management and tracking of car entries and order entries into the system.
 
 * System dependencies
 
