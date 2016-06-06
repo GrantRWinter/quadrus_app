@@ -1,8 +1,16 @@
 # README
 
-!Quadrus Web Full-Stack Developer Practicum
+Quadrus Web Full-Stack Developer Practicum
 
 This app is currently deployed on Heroku at [https://quadrusapp.herokuapp.com/](https://quadrusapp.herokuapp.com/)
+
+### Technology Used
+
+1. Ruby on Rails for Application Framework
+2. Postgres for DB
+3. Bootstrap for styling
+4. AWS S3 for image storage
+5.
 
 ### Site Navigation Instructions
 
@@ -46,15 +54,11 @@ Create the database user
 ```ruby
 createdb  #creates defaults dbs
 ```
-To create DB, from command line:
-
-  ```rake db:create```
-
-To drop DB, from command line:
+To recreate DB, from command line:
 
   ```rake db:drop```
 
-To migrate DB, from command line:
+  ```rake db:create```
 
   ```rake db:migrate```
 
